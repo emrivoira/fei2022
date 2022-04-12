@@ -16,40 +16,40 @@ class m220405_055207_create_junction_table_for_usuarios_and_permiso_tables exten
      */
     public function safeUp()
     {
-        $this->createTable('{{%usuarios_permiso}}', [
-            'usuarios_id' => $this->integer(),
+        $this->createTable('{{%usuario_permiso}}', [
+            'usuario_id' => $this->integer(),
             'permiso_id' => $this->integer(),
-            'PRIMARY KEY(usuarios_id, permiso_id)',
+            'PRIMARY KEY(usuario_id, permiso_id)',
         ]);
 
         // creates index for column `usuarios_id`
         $this->createIndex(
-            '{{%idx-usuarios_permiso-usuarios_id}}',
-            '{{%usuarios_permiso}}',
-            'usuarios_id'
+            '{{%idx-usuario_permiso-usuario_id}}',
+            '{{%usuario_permiso}}',
+            'usuario_id'
         );
 
         // add foreign key for table `{{%usuarios}}`
         $this->addForeignKey(
-            '{{%fk-usuarios_permiso-usuarios_id}}',
-            '{{%usuarios_permiso}}',
-            'usuarios_id',
-            '{{%usuarios}}',
+            '{{%fk-usuario_permiso-usuario_id}}',
+            '{{%usuario_permiso}}',
+            'usuario_id',
+            '{{%usuario}}',
             'id',
             'CASCADE'
         );
 
         // creates index for column `permiso_id`
         $this->createIndex(
-            '{{%idx-usuarios_permiso-permiso_id}}',
-            '{{%usuarios_permiso}}',
+            '{{%idx-usuario_permiso-permiso_id}}',
+            '{{%usuario_permiso}}',
             'permiso_id'
         );
 
         // add foreign key for table `{{%permiso}}`
         $this->addForeignKey(
-            '{{%fk-usuarios_permiso-permiso_id}}',
-            '{{%usuarios_permiso}}',
+            '{{%fk-usuario_permiso-permiso_id}}',
+            '{{%usuario_permiso}}',
             'permiso_id',
             '{{%permiso}}',
             'id',
@@ -64,28 +64,28 @@ class m220405_055207_create_junction_table_for_usuarios_and_permiso_tables exten
     {
         // drops foreign key for table `{{%usuarios}}`
         $this->dropForeignKey(
-            '{{%fk-usuarios_permiso-usuarios_id}}',
+            '{{%fk-usuario_permiso-usuario_id}}',
             '{{%usuarios_permiso}}'
         );
 
         // drops index for column `usuarios_id`
         $this->dropIndex(
-            '{{%idx-usuarios_permiso-usuarios_id}}',
-            '{{%usuarios_permiso}}'
+            '{{%idx-usuario_permiso-usuario_id}}',
+            '{{%usuario_permiso}}'
         );
 
         // drops foreign key for table `{{%permiso}}`
         $this->dropForeignKey(
-            '{{%fk-usuarios_permiso-permiso_id}}',
-            '{{%usuarios_permiso}}'
+            '{{%fk-usuario_permiso-permiso_id}}',
+            '{{%usuario_permiso}}'
         );
 
         // drops index for column `permiso_id`
         $this->dropIndex(
-            '{{%idx-usuarios_permiso-permiso_id}}',
-            '{{%usuarios_permiso}}'
+            '{{%idx-usuario_permiso-permiso_id}}',
+            '{{%usuario_permiso}}'
         );
 
-        $this->dropTable('{{%usuarios_permiso}}');
+        $this->dropTable('{{%usuario_permiso}}');
     }
 }
