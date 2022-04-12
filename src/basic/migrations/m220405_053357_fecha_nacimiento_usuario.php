@@ -12,7 +12,7 @@ class m220405_053357_fecha_nacimiento_usuario extends Migration
      */
     public function safeUp()
     {
-        $this->addColumn('usuarios', 'nacimiento', $this->date());
+        $this->addColumn('usuario', 'nacimiento', $this->date());
     }
 
     /**
@@ -20,7 +20,7 @@ class m220405_053357_fecha_nacimiento_usuario extends Migration
      */
     public function safeDown()
     {
-        $this->dropColumn('usuarios', 'nacimiento');
+        $this->dropColumn('usuario', 'nacimiento');
 
         return false;
     }
