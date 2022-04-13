@@ -11,6 +11,6 @@ use yii\rest\ActiveController;
 class UsuarioController extends ActiveController
 {
  
-    public $modelClass = 'app\models\Usuario';
+    public $modelClass = 'app\modules\apiv1\models\Usuario';
 
 }
