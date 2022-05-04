@@ -58,15 +58,11 @@ $config = [
                 ]
             ],
         ],
-<<<<<<< HEAD
-        
     ],
     'modules' => [
         'apiv1' => [
             'class' => 'app\modules\apiv1Module',
         ],
-=======
->>>>>>> f0b05bc0edfa973b78e6834d854834b5b1e083f8
     ],
     'params' => $params,
 ];
