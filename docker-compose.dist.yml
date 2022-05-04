@@ -31,5 +31,6 @@ services:
       DB_PASSWORD: fei2022
       DB_HOST: db
       PHP_USER_ID: 1000
+      PRODUCCION: 0
     ports:
       - 8000:80  
