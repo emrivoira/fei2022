@@ -1,9 +1,10 @@
 <?php
+use yii\bootstrap4\Html;
 ?>
 
 <div class="site-components">
     <div id="app" class='container mt-3'>
-        <button-counter>/boutton-counterI
+       
         <button-counter></button-counter>
 </div>
 
@@ -16,18 +17,6 @@
         }
     },
     template: '<button v-on:click="count++">Me ha pulsado {{ count }} veces.</button>'
-    })
-
-    var app=new Vue({
-     el: 'Fapp',
-     data:{
-      },
-    methods:{
-    },
-    computed:{
-     },
-    mounted (){
-       console. log("Vue Mounted");
     })
 
 </script>

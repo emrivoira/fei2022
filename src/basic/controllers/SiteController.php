@@ -125,4 +125,14 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+     /**
+     * Displays components.
+     *
+     * @return string
+     */
+    public function actionComponents()
+    {
+        return $this->render('components');
+    }
 }
